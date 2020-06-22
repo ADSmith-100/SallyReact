@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sally Stupid Resume</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      function App(props) {
+        return (
+          <div className={"container"}>
+            <header>
+              <img
+                src={
+                  "https://luxeadventuretraveler.com/wp-content/uploads/2018/02/Luxe-Adventure-Traveler-Malaga-Spain-4.jpg"
+                }
+                alt={"Malaga Spain over head at night"}
+              />
+              <h1>{props.name} Resume</h1>
+            </header>
+
+            <br />
+
+            <main>
+              <section id={"summary"}>
+                <header>
+                  <h2>Summary</h2>
+                </header>
+                <p>Background summary...</p>
+              </section>
+
+              <section id={"education"}>
+                <header>
+                  <h2>Education</h2>
+                </header>
+                <ul>
+                  <li>Bunghole University, B.S in BS - 2010</li>
+                </ul>
+              </section>
+
+              <section id={"skills"}>
+                <header>
+                  <h2>Technical Skills</h2>
+                </header>
+                <ul>
+                  <li>Languages: JavaScript, HTML, CSS</li>
+                  <li>Frameworks: ReactJS, </li>
+                  <li>Tools: Git</li>
+                </ul>
+              </section>
+
+              <section id={"experience"}>
+                <header>
+                  <h2>{props.name} Work Experience</h2>
+                </header>
+
+                <details open>
+                  <summary>
+                    XYX Company (
+                    <a href={"http://xyz.com/"} target={"_blank"}>
+                      http://xyz.com
+                    </a>
+                    ), Junior Developer 2014 - 2015
+                  </summary>
+                  <p>XXX description ipsum dolor sit amet ...</p>
+                  <ul>
+                    <li>Developed ...</li>
+                    <li>Designed ...</li>
+                    <li>Deployed...</li>
+                  </ul>
+                </details>
+
+                <details open>
+                  <summary>
+                    ZZZ Company (
+                    <a href={"http://zzz.com"} target={"_blank"}>
+                      http://zzz.com
+                    </a>
+                    ), Senior 2015 - 2017
+                  </summary>
+                  <p>ZZZ description ipsum dolor sit amet ...</p>
+                  <ul>
+                    <li>Developed ...</li>
+                    <li>Designed ...</li>
+                    <li>Deployed...</li>
+                  </ul>
+                </details>
+              </section>
+
+              <address>
+                <h2>{props.name} Contact Info</h2>
+                <a href={props.email} target={"_blank"}>
+                  {props.email}
+                </a>
+                <br />
+                <a href={props.url} target={"_blank"}>
+                  {props.url}
+                </a>
+                <br />
+                <a href={props.github} target={"_blank"}>
+                  {props.github}
+                </a>
+                <br />
+                <p>{props.phone}</p>
+                <br />
+                <img
+                  src={
+                    "https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg"
+                  }
+                  alt={"Student Sally Picture"}
+                />
+              </address>
+            </main>
+
+            <footer>&copy; 2020 {props.name}</footer>
+          </div>
+        );
+      }
+
+      const appRoot = document.querySelector("#root");
+
+      ReactDOM.render(
+        <App
+          name="Sally Student"
+          email="sally@InternetExplorer.old"
+          phone="+34 100 57 24 15"
+          url="http://www.sally.com"
+          github="github.com/sally"
+        />,
+        appRoot
+      );
+    </script>
+  </body>
+</html>
